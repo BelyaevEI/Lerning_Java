@@ -1,13 +1,39 @@
 package com.company;
+
 import java.util.Scanner;
 
-// Вывести квадрат числа от 10 до 20 включительно
+/*
+Удаляем одинаковые строки
+*/
 
 public class Cycle {
+    public static String[] strings;
+
     public static void main(String[] args) {
-        for( int i = 10; i < 21; i++){
-            System.out.printf("Квадрат числа %d равен %.0f \n", i, Math.pow(i, 2) );
-//            System.out.println(Math.pow(i, 2));
+        //напишите тут ваш код
+        Scanner scan = new Scanner(System.in);
+        strings = new String[6];
+
+        for(int i = 0; i < 6; i++){
+            strings[i] = scan.nextLine();
+        }
+
+        for(int i = 0; i < strings.length; i++){
+            String currentString = strings[i];
+            for(int k = i + 1; k < strings.length; k++){
+
+                if (currentString == null) {
+                    break;
+                }
+
+                if (currentString.equals(strings[k])) {
+                    strings[k] = null;
+                    strings[i] = null;
+                }
+            }
+        }
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i] + ", ");
         }
     }
 }
