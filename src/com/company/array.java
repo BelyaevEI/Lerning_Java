@@ -30,8 +30,7 @@ public class array {
             summ = summ + arr[i];
         }
 
-        System.out.print("Сумма элементов массива:\n");
-        System.out.print(summ);
+        System.out.printf("Сумма элементов массива:%d", summ);
     }
 
 }
